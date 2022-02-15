@@ -1,0 +1,11 @@
+{
+  "port": 5000,
+  "ioPort": 8080,
+  "mongoUri": "mongodb://127.0.0.1/",
+  "jwtSecret": "vodokanalPMR",
+  "baseUrl": "http://localhost:5000",
+  "mysqlHost": "192.168.0.248",
+  "mysqlUser": "asteriskclient",
+  "mysqlPassword": "0074722500989",
+  "mysqlDb": "callcentre1"
+}
