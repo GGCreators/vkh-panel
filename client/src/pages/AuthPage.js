@@ -80,7 +80,7 @@ export const AuthPage = () => {
               className="btn grey lighten-1 black-text"
               onClick={registerHandler}
               disabled={loading}
-              style={{ display: none }}
+              style={{ display: 'none' }}
             >
               Регистрация
             </button>
