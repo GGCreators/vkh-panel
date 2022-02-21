@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export const CallsList = ({ calls }) => {
+  const [num, setNum] = useState(15)
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  const handleScroll = () => {
+    if (
+      document.body.scrollHeight - document.documentElement.scrollTop ===
+      document.documentElement.clientHeight
+    ) {
+      setNum((num) => num + 15)
+    }
+  }
+
   if (!calls.length) {
     return <p className="center">Звонков нет</p>
   }
-  console.log(calls)
+
   return (
     <table>
       <thead>
@@ -27,7 +41,7 @@ export const CallsList = ({ calls }) => {
       </thead>
 
       <tbody>
-        {calls.map((call, index) => {
+        {calls.slice(0, num).map((call, index) => {
           return (
             <tr key={call._id}>
               <td>{index + 1}</td>

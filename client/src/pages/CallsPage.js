@@ -35,6 +35,7 @@ export const CallsPage = () => {
   useEffect(() => {
     fetchCalls()
   }, [fetchCalls])
+
   if (loading) {
     return <Loader />
   }
