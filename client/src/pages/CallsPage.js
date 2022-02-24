@@ -29,7 +29,7 @@ export const CallsPage = () => {
       const fetched = await request('/api/call', 'GET', null, {
         Authorization: `Bearer ${token}`,
       })
-      setCalls(fetched)
+      setCalls(fetched.reverse())
     } catch (e) {}
   }, [token, request])
   useEffect(() => {
